@@ -1,3 +1,7 @@
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
 Data/
+
+# Secrets
+.env
+venv/
