@@ -5,3 +5,7 @@ Data/
 # Secrets
 .env
 venv/
+
+# Python
+__pycache__/
+*.pyc
