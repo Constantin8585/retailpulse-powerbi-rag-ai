@@ -122,17 +122,28 @@ Les responsables régionaux ne voient que leur région ; les profils « ALL » (
 
 ---
 
+## Extension Fabric + IA (branche `feature/fabric-ai-agent-extension`)
+
+Une extension expérimentale ajoute une couche data Microsoft Fabric et une couche IA agentique par-dessus le modèle Power BI, qui reste la source de vérité des chiffres (l'IA explique, elle n'invente pas). Détails : [`ai-agent/README.md`](ai-agent/README.md) (état d'implémentation, installation, utilisation) et [`docs/architecture-fabric-ai.md`](docs/architecture-fabric-ai.md) / [`docs/ai-governance.md`](docs/ai-governance.md) / [`docs/demo-script.md`](docs/demo-script.md).
+
+Cette extension vit pour l'instant sur sa branche dédiée et n'est pas fusionnée dans `main`.
+
 ## Structure du dépôt
 
 ```
 .
 ├── README.md
-├── docs/                 # architecture, dictionnaire de données, gouvernance, déploiement
+├── docs/                 # architecture, dictionnaire de données, gouvernance IA, script de démo
 ├── src/
-│   ├── semantic-model/   # modèle PBIP (.tmdl)
-│   └── reports/          # rapports PBIP
-├── screenshots/          # captures des pages
-└── tests/                # règles Best Practice Analyzer
+│   ├── PowerBI_Projet.SemanticModel/   # modèle PBIP (.tmdl)
+│   └── PowerBI_Projet.Report/          # rapport PBIP
+├── screenshots/          # captures des pages (à alimenter)
+├── tests/                # règles Best Practice Analyzer, dossiers d'évaluation IA
+├── Data/                 # fichiers sources CSV (ignorés par Git, fournis en local)
+├── ai-agent/             # extension IA agentique (backend Python, frontend à venir)
+│   ├── backend/          # agents, outils SQL Fabric, indexation Azure AI Search
+│   └── frontend/         # placeholder, pas encore développé
+└── fabric/               # placeholders notebooks/scripts SQL Fabric (à venir)
 ```
 
 *Projet réalisé dans le cadre d'un parcours d'apprentissage Power BI enterprise.*
